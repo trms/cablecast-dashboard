@@ -1,0 +1,9 @@
+{{channel.name}}
+{{#each filteredSummaries as |event|}}
+  <li>
+      {{event.show.title}}
+      {{moment-format event.start}} - {{moment-format event.end}}
+      {{event.device.name}}
+      {{timecode (countdown event.end)}}
+  </li>
+{{/each}}

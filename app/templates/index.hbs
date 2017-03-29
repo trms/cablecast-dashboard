@@ -1,0 +1,10 @@
+{{tick.tock}}
+<ul>
+{{#each model.channels as |channel|}}
+  <li>
+    {{event-dashboard channel=channel}}
+  </li>
+{{else}}
+  There are no channels silly!
+{{/each}}
+</ul>
