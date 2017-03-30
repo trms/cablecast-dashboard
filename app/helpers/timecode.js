@@ -20,8 +20,8 @@ var trmsTimecode = function(totalSeconds) {
     var seconds = padWithZeros(Math.ceil(divisor_for_seconds), 2);
 
     return hours + ':' + minutes + ':' + seconds;
-}
+};
 
 export default Ember.Helper.helper(function([seconds]) {
   return trmsTimecode(seconds);
-})
+});

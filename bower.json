@@ -1,5 +1,7 @@
 {
   "name": "cablecast-dashboard",
   "dependencies": {
+    "moment": "^2.18.1",
+    "bootstrap": "^3.3.7"
   }
 }

@@ -1,9 +1,52 @@
-{{channel.name}}
+{{!--
+
+<div class="row" align="center">
+  <div class="col-md-12">
+    {{channel.name}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2">
+    Countdown
+  </div>
+</div>
 {{#each filteredSummaries as |event|}}
-  <li>
-      {{event.show.title}}
-      {{moment-format event.start}} - {{moment-format event.end}}
-      {{event.device.name}}
-      {{timecode (countdown event.end)}}
-  </li>
+<div class="row"> 
+  <div class="col-md-2">
+    {{timecode (countdown event.end)}}
+  </div>
+</div>
 {{/each}}
+--}}
+<table class="table">
+  <thead>
+    {{#if channel.automationOverriden}}
+      <tr><td class="channel-name danger" colspan=5>{{channel.name}}</td></tr>
+    {{else}}
+      <tr><td class="channel-name info" colspan=5>{{channel.name}}</td></tr>
+    {{/if}}
+
+    {{#if filteredSummaries}}
+    <tr>
+      <th>Start</th>
+      <th>End</th>
+      <th>ShowID</th>
+      <th>Title</th>
+      <th>Device Name</th>
+    </tr>
+    {{/if}}
+  </thead>
+  <tbody>
+    {{#each filteredSummaries as |event|}}
+      <tr class="{{if (eq event activeEvent) 'success'}}">
+        <td>{{moment-format event.start}}</td>
+        <td>{{moment-format event.end}}</td>
+        <td>{{event.show.id}}</td>
+        <td>{{event.show.title}}</td>
+        <td>{{event.device.name}}</td>
+      </tr>
+    {{else}}
+      <tr><td>There are currently no shows scheduled on this channel.</td></tr>
+    {{/each}}
+  </tbody>
+</table>
