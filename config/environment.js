@@ -4,8 +4,8 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'cablecast-dashboard',
     environment: environment,
-    rootURL: '/',
-    locationType: 'auto',
+    rootURL: '/cablecast/plugins/HUD2/',
+    locationType: 'hash',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
