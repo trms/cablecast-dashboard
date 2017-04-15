@@ -21,13 +21,13 @@
 <table class="table">
   <thead>
     {{#if channel.automationOverriden}}
-      <tr><td class="channel-name danger" colspan=5>{{channel.name}}</td></tr>
+      <tr><td class="channel-name override" colspan=5>{{channel.name}}</td></tr>
     {{else}}
-      <tr><td class="channel-name info" colspan=5>{{channel.name}}</td></tr>
+      <tr><td class="channel-name" colspan=5>{{channel.name}}</td></tr>
     {{/if}}
 
     {{#if filteredSummaries}}
-    <tr>
+    <tr class="channel-header">
       <th>Start</th>
       <th>End</th>
       <th>ShowID</th>
@@ -38,7 +38,7 @@
   </thead>
   <tbody>
     {{#each filteredSummaries as |event|}}
-      <tr class="{{if (eq event activeEvent) 'success'}}">
+      <tr class="{{if (eq event activeEvent) 'on-air'}}">
         <td>{{moment-format event.start}}</td>
         <td>{{moment-format event.end}}</td>
         <td>{{event.show.id}}</td>

@@ -7,4 +7,25 @@
 .channel-name {
     text-align: center; 
     font-weight: bold;
+    font-size: 1.2em;
+    background-color: darkblue;
+}
+
+.channel-header {
+	background-color: #333;
+}
+
+.override {
+	background-color: darkred;
+}
+
+.on-air {
+	background-color: darkgreen;
+}
+
+
+html, body {
+	background-color: black;
+	color: white;
+	font-size: 1.1em;
 }

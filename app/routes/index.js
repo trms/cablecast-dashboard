@@ -4,8 +4,20 @@ import { task,timeout } from 'ember-concurrency';
 
 
 export default Ember.Route.extend({
+
+
   model() {
-    return this.fetchData();
+    return this.fetchData().then((result) => {
+      let channelOrder = ['2', '1', '5'];
+
+      let channels = result.channels;
+
+      //TODO: Figure out how to sort them, all we are doing right now is filtering
+      channels = channels.filter((channel) => {return channelOrder.includes(channel.id)});
+
+      result.channels = channels;
+      return result;
+    })
   },
 
 
