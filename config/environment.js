@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'cablecast-dashboard',
     environment: environment,
-    rootURL: '/cablecast/plugins/HUD2/',
+    rootURL: '/',
     locationType: 'hash',
     EmberENV: {
       FEATURES: {
