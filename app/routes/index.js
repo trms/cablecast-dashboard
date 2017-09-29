@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import ajax from 'ic-ajax';
 import { task,timeout } from 'ember-concurrency';
 
 export default Ember.Route.extend({
@@ -22,8 +21,9 @@ export default Ember.Route.extend({
     return this.fetchData().then((result) => {
 
       let channelIDs = params.channels;
-      if(channelIDs === null)
+      if(channelIDs === null) {
         channelIDs = "1,2,3";
+      }
 
       let channelOrder = channelIDs.split(',');
 
@@ -36,7 +36,7 @@ export default Ember.Route.extend({
 
       result.channels = channels;
       return result;
-    })
+    });
   },
 
   afterModel() {
