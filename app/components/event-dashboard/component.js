@@ -17,11 +17,10 @@ export default Ember.Component.extend({
    return summaries;
  }),
  activeEvent: Ember.computed('filteredSummaries.[]', 'tick.tock', function () {
-   let active = false;
    let now = new Date(this.get('tick.tock'));
    return this.get('filteredSummaries').find((summary) => {
     return summary.get('start') < now && summary.get('end') > now;
-   })
+   });
  }),
  actions: {
 

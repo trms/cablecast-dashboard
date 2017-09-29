@@ -7,4 +7,32 @@
 .channel-name {
     text-align: center; 
     font-weight: bold;
+    font-size: 1.2em;
+    border-bottom: 2px solid white;
+}
+
+.table > tbody > tr:nth-child(even) {
+    background-color: #222;
+}
+
+.table > tbody > tr > td {
+    border-top: none;
+}
+
+.override {
+	background-color: darkred;
+}
+
+.on-air {
+	background-color: #142;
+}
+
+.container {
+    width: 100%;
+}
+
+html, body {
+	background-color: black;
+	color: white;
+	font-size: 1.1em;
 }
